@@ -29,4 +29,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: docker pull danielneme/nginx-prueba3:latest
+        tags: danielneme/nginx-prueba3:latest
