@@ -1,2 +1,22 @@
 # prueba3-craftech
 CI-CD
+Prueba 3 - 
+
+CI/CD Dockerizar un nginx con el index.html default. Elaborar un pipeline que ante cada cambio realizado sobre el index.html buildee la nueva imagen y la actualize en la plataforma elegida. (docker-compose, swarm, kuberenetes, etc.) Para la creacion del CI/CD se puede utilizar cualquier plataforma (CircleCI, Gitlab, Github, Bitbucket.)
+
+----------------------------------------------------
+Despliege:
+Se realizo la tarea con Docker Compose y GitHub.
+
+Los repositorios fueron creados en GitHub y DockerHub.
+
+Se coloco un index.html basico para realizar las pruebas.
+Se creo el Dockerfile donde se indica la utilizacion de la ultima version de NGINX y que se guarde dentro del mismo la pagina index.html.
+Se creo el archivo docker-compose.yml donde se especifica que el container debe tener la ultima version de NGINX, que se mapee el puerto 80 y se monte un volumen llamado html.
+
+En el docker-image.yml es donde la magia sucede.
+Cuando se ejecute un PUSH sobre el repositorio que afecte a la branch "MAIN" y en la misma se halla producido un cambio en el archivo "index.html" este proceda a crear un workflow JOB con GitHubActions que actualice la imagen creada en DockerHub.
+Ademas, se agrego el versionado de la imagen, guardando 2 versiones de la misma. Con los tags: ":latest" & ":previous".
+
+
+El CI/CD se configuro con GitHub Actions. Agregando los paramatros "SECRETS" de User & Pasword del repositorio Docker creado donde se realiza el deploy de la imagen.
