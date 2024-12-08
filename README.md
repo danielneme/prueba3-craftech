@@ -20,3 +20,10 @@ Ademas, se agrego el versionado de la imagen, guardando 2 versiones de la misma.
 
 
 El CI/CD se configuro con GitHub Actions. Agregando los paramatros "SECRETS" de User & Pasword del repositorio Docker creado donde se realiza el deploy de la imagen.
+-----------------------------------------------------
+
+Para verificar la imagen:
+1ro: docker pull danielneme/nginx-prueba3:latest
+2do: docker run -d -p 80:80 --name conteiner-prueba danielneme/nginx-prueba3:latest
+3ro: docker ps para verificar que el contenedor este funcionando (Status Up) y luego ingresar con cualquier Browser por la ruta que se indique en PORTS.
+
